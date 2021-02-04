@@ -10,6 +10,7 @@ function App() {
 
   const [timeZones, settimeZones] = useState();
 
+  //fetching timezone data-list
   useEffect(()=>{
     const dataFetcher = async()=>{
         var prom =  await getData();
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <div className="App">
+      {/*passing context value to child components*/}
       <TimeContext.Provider value={timeZones}>
           <TimeZone/>
       </TimeContext.Provider>

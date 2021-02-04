@@ -6,9 +6,11 @@ import Time from './Time';
 
 
 const TimeZone = () => {
+    //consuming context
     const timeZones = useContext(TimeContext);
     const [timeZoneSelect,setSelectTimeZone] = useState("Europe/London");
 
+    //handling selected value
     const handleSelect = (value)=>{
         setSelectTimeZone(value);
     }
@@ -22,6 +24,7 @@ const TimeZone = () => {
                 id="dropdown-menu-align-right"
                 onSelect={handleSelect}
             >
+                {/*populating dropdown item*/}
                {timeZones&&timeZones.map((zone,idx)=>{
                         return <Dropdown.Item eventKey={zone.zoneName} key={idx}>{zone.zoneName}</Dropdown.Item>
                     })}
