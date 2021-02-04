@@ -1,19 +1,13 @@
-import React, { useEffect,useState } from 'react'
+import React, { useState, useContext} from 'react'
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import getData from '../utils/getData'
+import { TimeContext } from '../context/TimeContext';
 import Time from './Time';
 
+
 const TimeZone = () => {
-    const [timeZones, settimeZones] = useState();
+    const timeZones = useContext(TimeContext);
     const [timeZoneSelect,setSelectTimeZone] = useState("Europe/London");
-    useEffect(()=>{
-        const dataFetcher = async()=>{
-            var prom =  await getData();
-            settimeZones(prom.data.zones);
-        } 
-        dataFetcher();    
-    },[])
 
     const handleSelect = (value)=>{
         setSelectTimeZone(value);
@@ -22,7 +16,7 @@ const TimeZone = () => {
     return (
         <div>
             <Time selectedTimeZone={timeZoneSelect}/>
-             <DropdownButton
+            <DropdownButton id="dropdown-basic-button"
                 alignRight
                 title="TimeZones"
                 id="dropdown-menu-align-right"
