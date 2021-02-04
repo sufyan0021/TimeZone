@@ -8,7 +8,6 @@ const Time = ({selectedTimeZone}) => {
 
     useEffect(()=>{
         getLocalTime(timeZone);
-        console.log('mounted');
     },[])
 
     const getLocalTime = async (selectedTimeZone)=>{
@@ -32,7 +31,7 @@ const Time = ({selectedTimeZone}) => {
 
     return (
         <div className='fetchedTime'>
-            <h6>The Local Time in current timezone {selectedTimeZone} is:</h6>
+            <h6 data-testid='timeTextCont'>The Local Time in current timezone {selectedTimeZone} is:</h6>
                 {time} 
         </div>
     )

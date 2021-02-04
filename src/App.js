@@ -20,7 +20,7 @@ function App() {
   },[])
 
   return (
-    <div className="App">
+    <div className="App" data-testid='AppComp'>
       {/*passing context value to child components*/}
       <TimeContext.Provider value={timeZones}>
           <TimeZone/>

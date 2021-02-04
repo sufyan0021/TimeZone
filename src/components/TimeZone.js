@@ -19,6 +19,7 @@ const TimeZone = () => {
         <div>
             <Time selectedTimeZone={timeZoneSelect}/>
             <DropdownButton id="dropdown-basic-button"
+                data-testid='dropdown-timezone'
                 alignRight
                 title="TimeZones"
                 id="dropdown-menu-align-right"
