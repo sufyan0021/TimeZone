@@ -1,4 +1,3 @@
-import { getDefaultNormalizer } from '@testing-library/react'
 import React,{useState,useEffect} from 'react'
 import getTime from '../utils/getTime';
 
